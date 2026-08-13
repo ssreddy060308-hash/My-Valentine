@@ -17,22 +17,24 @@
       border-radius: 20px;
       text-align: center;
       position: relative;
-      width: 340px;
-      height: 200px;
+      width: 350px;
+      height: 220px;
     }
-    h1 { color: #ff4d6d; font-size: 22px; }
-    p { color: #555; font-size: 14px;}
-    button {
-      padding: 12px 30px;
-      border: none;
-      border-radius: 10px;
-      font-size: 18px;
-      cursor: pointer;
-      font-weight: bold;
+    h1 { color: #ff4d6d; }
+    .yes { 
+      background: #4ade80; color: white; 
+      padding: 12px 30px; border: none; border-radius: 10px; 
+      font-size: 18px; font-weight: bold;
+      position: absolute; /* Iddi chala important */
+      top: 130px; left: 60px;
+    }
+    .no { 
+      background: #f87171; color: white; 
+      padding: 12px 30px; border: none; border-radius: 10px; 
+      font-size: 18px; font-weight: bold;
       position: absolute;
+      bottom: 40px; left: 50%; transform: translateX(-50%);
     }
-    .yes { background: #4ade80; color: white; }
-    .no { background: #f87171; color: white; bottom: 40px; left: 50%; transform: translateX(-50%); }
   </style>
 </head>
 <body>
@@ -40,15 +42,14 @@
     <h1>Will you be my best friend forever? ❤️</h1>
     <p>we will continue this friendship life long</p>
     <button class="yes" id="yesBtn" onmouseover="moveYes()">Yes</button>
-    <button class="no" onclick="alert('Aww... 😢 But we will be friends forever')">No</button>
+    <button class="no" onclick="alert('Aww... 😢 Kani manam friends ga untam')">No</button>
   </div>
 
 <script>
   function moveYes() {
     let btn = document.getElementById('yesBtn');
-    let card = document.querySelector('.card');
-    let x = Math.floor(Math.random() * (card.offsetWidth - 100));
-    let y = Math.floor(Math.random() * (card.offsetHeight - 80));
+    let x = Math.random() * 250;
+    let y = Math.random() * 120;
     btn.style.left = x + 'px';
     btn.style.top = y + 'px';
   }
