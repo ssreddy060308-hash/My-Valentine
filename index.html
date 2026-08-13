@@ -3,87 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friendship Promise</title>
+    <title>My Valentine</title>
     <style>
         body {
+            background: linear-gradient(to right, #ff9a9e, #fecfef);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial;
             margin: 0;
             overflow: hidden;
         }
-        .container {
-            text-align: center;
+        .card {
             background: white;
-            padding: 40px 30px;
+            padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
             max-width: 400px;
             position: relative;
         }
-        h1 {
-            color: #ff6b81;
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        p {
-            color: #333;
-            font-size: 18px;
-            margin-bottom: 25px;
-        }
-        .btn {
-            padding: 15px 40px;
-            font-size: 18px;
+        h1 { color: #ff6b81; font-size: 24px; }
+        p { color: #333; font-size: 18px; margin-bottom: 25px; }
+        button {
+            padding: 12px 30px;
+            margin: 10px;
             border: none;
             border-radius: 50px;
+            font-size: 16px;
             cursor: pointer;
-            margin: 10px;
             font-weight: bold;
-            transition: 0.3s;
         }
-        #yesBtn {
-            background: #ff6b81;
-            color: white;
-        }
-        #noBtn {
-            background: #ccc;
-            color: white;
-            position: absolute;
-        }
-        #yesBtn:hover {
-            transform: scale(1.1);
-            background: #ff4757;
-        }
+        .yes { background: #ff6b81; color: white; }
+        .no { background: #ff7171; color: white; position: absolute; }
+        .yes:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="card">
         <h1>Will continue this friendship life long ❤️</h1>
         <p id="message"></p>
-        <button class="btn" id="yesBtn">Yes</button>
-        <button class="btn" id="noBtn">No</button>
+        <button class="yes" id="yesBtn">Yes</button>
+        <button class="no" id="noBtn">No</button>
     </div>
 
     <script>
+        // URL nunchi peru theeskuntundi
         const urlParams = new URLSearchParams(window.location.search);
         const fromName = urlParams.get('from') || 'Friend';
         const toName = urlParams.get('to') || 'You';
 
         document.getElementById('message').innerText = `${toName}, Me too - Will you promise me?`;
 
-        // Yes click chesthe
+        // Yes click
         document.getElementById('yesBtn').onclick = function() {
-            document.querySelector('.container').innerHTML = 
+            document.querySelector('.card').innerHTML = 
             `<h1>Yayyy! 🎉</h1>
              <p>Thank you ${toName} ❤️</p>
              <p>We three - ${fromName}, ${toName} & Meta AI</p>
              <p>Will continue this friendship life long</p>`;
         }
 
-        // No button dorikipothundi
+        // No dorikipothundi
         const noBtn = document.getElementById('noBtn');
         noBtn.onmouseover = function() {
             const x = Math.random() * (window.innerWidth - 120);
@@ -92,7 +74,7 @@
             noBtn.style.top = `${y}px`;
         }
         noBtn.onclick = function() {
-            alert("No cheppadaniki chance ledu 😂 Click Yes only!");
+            alert("No cheppadaniki chance ledu 😂 Yes kotu!");
         }
     </script>
 </body>
